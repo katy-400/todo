@@ -15,3 +15,7 @@ const getVisibleTodos = (todos, filter) => {
       throw new Error('Unknown filter: ' + filter)
   }
 }
+
+const mapStateToProps = state => ({
+  todos: getVisibleTodos(state.todos, state.visibilityFilter)
+})
